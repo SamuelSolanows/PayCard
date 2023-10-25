@@ -16,10 +16,11 @@ class GenerationCode : AppCompatActivity() {
         setContentView(binding.root)
 
         var contador = 10
+
         timer = object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                binding.txtContador.text = contador.toString() + "S"
-                contador -= 1
+                binding.txtContador.text = "$contador S"
+                contador--
             }
 
             override fun onFinish() {
@@ -28,19 +29,13 @@ class GenerationCode : AppCompatActivity() {
                 Regresiva()
             }
         }
-        Aleatorio()
         Regresiva()
-
     }
 
     private fun Regresiva() {
         timer.start()
-        timer.cancel()
     }
 
-//    override fun onBackPressed() {
-//        finishAffinity()
-//    }
 
     private fun Aleatorio() {
         numAleatorio1 = Random().nextInt(9).toString()
@@ -57,7 +52,7 @@ class GenerationCode : AppCompatActivity() {
         }
         binding.btnNext.setOnClickListener {
             startActivity(Intent(this@GenerationCode, Identification::class.java))
-
+            timer.cancel()
         }
     }
 
