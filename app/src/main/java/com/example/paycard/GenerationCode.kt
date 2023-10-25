@@ -14,15 +14,14 @@ class GenerationCode : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityGenerationCodeBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        binding.btnNext.setOnClickListener {
-            startActivity(Intent(this@GenerationCode, Identification::class.java))
-            timer.cancel()
-        }
+        Aleatorio()
+
+
         var contador = 10
         timer = object : CountDownTimer(10000, 1000) {
             override fun onTick(millisUntilFinished: Long) {
-                binding.txtContador.text = "$contador S"
-                contador--
+                binding.txtContador.text = contador.toString() + "S"
+                contador -= 1
             }
 
             override fun onFinish() {
@@ -32,11 +31,6 @@ class GenerationCode : AppCompatActivity() {
             }
         }
         Regresiva()
-    }
-
-    override fun onRestart() {
-        super.onRestart()
-        Regresiva()
 
     }
 
@@ -44,6 +38,10 @@ class GenerationCode : AppCompatActivity() {
         timer.start()
     }
 
+    override fun onRestart() {
+        super.onRestart()
+        Regresiva()
+    }
 
     private fun Aleatorio() {
         numAleatorio1 = Random().nextInt(9).toString()
@@ -58,7 +56,10 @@ class GenerationCode : AppCompatActivity() {
             txtNum4.text = numAleatorio4
             txtNum5.text = numAleatorio5
         }
-
+        binding.btnNext.setOnClickListener {
+            startActivity(Intent(this@GenerationCode, Identification::class.java))
+            timer.cancel()
+        }
     }
 
     companion object {

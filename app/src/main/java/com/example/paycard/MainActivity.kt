@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
+import com.example.paycard.Userpreference.Companion.prefs
 import com.example.paycard.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
@@ -16,7 +17,7 @@ class MainActivity : AppCompatActivity() {
         CuentaRegresiva()
 
     }
-    var prefe = ".."
+
     private fun CuentaRegresiva() {
         var contador = 3
         object : CountDownTimer(3000, 1000) {
@@ -26,11 +27,10 @@ class MainActivity : AppCompatActivity() {
             }
 
             override fun onFinish() {
-                if (prefe.isNotEmpty()) {
+                if (prefs.GetName().isNotEmpty()) {
                     startActivity(Intent(this@MainActivity, Home::class.java))
                 } else {
                     startActivity(Intent(this@MainActivity, About::class.java))
-
                 }
                 finish()
             }

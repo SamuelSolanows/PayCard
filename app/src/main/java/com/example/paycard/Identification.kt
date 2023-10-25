@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.Log
 import android.widget.Toast
+import com.example.paycard.Userpreference.Companion.prefs
 import com.example.paycard.databinding.ActivityIdentificationBinding
 
 class Identification : AppCompatActivity() {
@@ -33,13 +34,16 @@ class Identification : AppCompatActivity() {
 
     private fun EnviarDatos() {
         var nameFull = binding.txtName.text.toString()
-        var name=nameFull.split(" ").first()
+        var name = nameFull.split(" ").first()
+
         var monto = binding.txtMonto.text.toString()
         startActivity(
             Intent(this@Identification, Verification::class.java)
                 .putExtra("name", name)
                 .putExtra("monto", monto)
         )
+        prefs.GuardarName(name)
+        prefs.GuaradarMonto(monto)
     }
 
 
