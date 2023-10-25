@@ -48,6 +48,6 @@
         android:layout_marginStart="20dp"
         android:text="+ 370,00"
         android:textColor="@color/text_primary"
-        android:textSize="25sp"
+        android:textSize="22sp"
         android:translationY="-10dp" />
 </LinearLayout>

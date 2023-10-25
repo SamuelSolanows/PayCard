@@ -136,7 +136,7 @@
                 android:layout_gravity="end"
                 android:layout_margin="15dp"
                 android:text="See All"
-                android:textColor="#121742" />
+                android:textColor="#0F1C86" />
         </FrameLayout>
 
         <LinearLayout
@@ -154,9 +154,9 @@
                     android:orientation="vertical">
 
                     <LinearLayout
-                        android:background="@color/white"
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content">
+                        android:layout_height="wrap_content"
+                        android:background="@color/white">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -203,15 +203,15 @@
                             android:layout_marginStart="20dp"
                             android:text="+ 370,00"
                             android:textColor="@color/text_primary"
-                            android:textSize="25sp"
+                            android:textSize="22sp"
                             android:translationY="-10dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@color/white"
-                        android:layout_height="wrap_content">
+                        android:background="@color/white">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -258,15 +258,15 @@
                             android:layout_marginStart="20dp"
                             android:text="- 120,00"
                             android:textColor="#5E5E5E"
-                            android:textSize="25sp"
+                            android:textSize="22sp"
                             android:translationY="-10dp" />
                     </LinearLayout>
 
                     <LinearLayout
                         android:layout_width="match_parent"
-                        android:background="@color/white"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:layout_height="wrap_content">
+                        android:background="@color/white">
 
                         <ImageView
                             android:layout_width="wrap_content"
@@ -313,7 +313,7 @@
                             android:layout_marginStart="20dp"
                             android:text="+ 180,00"
                             android:textColor="@color/text_primary"
-                            android:textSize="25sp"
+                            android:textSize="22sp"
                             android:translationY="-10dp" />
                     </LinearLayout>
                 </LinearLayout>
@@ -321,8 +321,6 @@
             </ScrollView>
         </LinearLayout>
 
-
     </LinearLayout>
-
 
 </FrameLayout>
